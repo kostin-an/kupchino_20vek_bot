@@ -13,11 +13,6 @@ keyboard1.row('Отправить свою историю или отзыв')
 def start_command(message):
     bot.send_message(message.from_user.id, text='Выберите интересующий экспонат:', reply_markup=keyboard1)
 
-@bot.message_handler(commands=['files'])
-def start_command(message):
-        voice = open('input_sound/, 'rb')
-        bot.send_voice(chat_id=message.chat.id, voice=voice)
-
 @bot.message_handler(content_types=['text'])
 def message_input(message):
     chat_id = message.chat.id
